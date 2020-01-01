@@ -1,0 +1,19 @@
+ //modificar tema
+
+ $my-color-1: #00a1ff ;///azul
+ $my-color-2: #8de971;/*verde*/
+ $my-color-3: #ff9500 ;/*laranga*/
+ $my-color-4: #ff7cd6;
+ $my-color-5: #e65f5c;/*vermelho*/
+
+$theme-colors:(
+"my-color-1":  $my-color-1,
+"my-color-2":  $my-color-2,
+"my-color-3":  $my-color-3,
+"my-color-4":  $my-color-4,
+"my-color-5":  $my-color-5
+);
+// $body-bg: $my-color-1;
+$link-color: $my-color-5;
+
+ @import "../../node_modules/bootstrap/scss/bootstrap.scss";
