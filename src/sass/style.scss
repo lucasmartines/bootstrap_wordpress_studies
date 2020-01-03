@@ -13,7 +13,19 @@ $theme-colors:(
 "my-color-4":  $my-color-4,
 "my-color-5":  $my-color-5
 );
+
+
 // $body-bg: $my-color-1;
 $link-color: $my-color-5;
+
+/*deixar imagens responsivas*/
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail{
+	max-width:100%;
+	height: auto;
+}
 
  @import "../../node_modules/bootstrap/scss/bootstrap.scss";
