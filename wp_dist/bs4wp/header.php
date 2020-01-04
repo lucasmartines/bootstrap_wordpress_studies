@@ -26,7 +26,9 @@
               $logo = wp_get_attachment_image_src($custom_logo_id,'full'); 
               
               if( has_custom_logo(  )){
+                echo "<a href='" . home_url( ) ."' > ";
                 echo '<img src="'. esc_url( $logo[0] ) . '" class="img-fluid" >';
+                echo "</a>";
               }
               else{ ?>
                 <h1><?php get_bloginfo( 'name' ); ?></h1>

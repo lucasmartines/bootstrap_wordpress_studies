@@ -1,5 +1,5 @@
 <?php 
-
+/*Template Name: Blog Page*/
 get_header(); ?>
 
 <?php 
@@ -28,13 +28,21 @@ $my_query = new WP_Query($my_args);
     </div>
   </article> <?php endwhile; ?> 
 </section> <?php endif ?>
-<?php wp_reset_query(); ?>
+
+<?php wp_reset_query();
+$my_args = array(  
+  'post_type'      => 'post',
+  'posts_per_page' => 3,
+);
+
+$my_query = new WP_Query($my_args);
+ ?>
 
 
 <section class="row ">
   <main class="col-md-8 col-sm-12">
-    <?php if(have_posts()) : while(have_posts()): the_post(); ?>
-       <?php get_template_part( 'content' , get_post_format() ); ?>
+    <?php if($my_query->have_posts()) : while($my_query->have_posts()): $my_query->the_post(); ?>
+       <?php get_template_part( 'content' , get_post_format( ) ); ?>
     <?php endwhile; ?>
     <div class="blog-pagination mb-5">
       <?php next_posts_link('Mais Antigos') ?>

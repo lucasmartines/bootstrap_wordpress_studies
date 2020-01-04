@@ -13,11 +13,7 @@ function bs4wp_customize_register($wp_customize){
 		'default' => _x('Meu Primeiro Tema de Wordpress','Bs 4 + WP'),
 		'type_mod'=>'theme_mod'
 	]);
-	$wp_customize->add_control('footer_title',[	
-		'label' => __('Titulo do Rodapé'),
-		'section' => 'footer',
-		'priority' => 1
-	]);
+	//register_
 
 	$wp_customize->add_setting('footer_text',[
 		'default' => _x('Feito por mim com muita dedicação e esforço','Bs 4 + WP'),
