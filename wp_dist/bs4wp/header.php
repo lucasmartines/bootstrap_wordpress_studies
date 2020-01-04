@@ -18,21 +18,27 @@
     <div class="container">
 
       <header class="row py-5 align-items-center">
-        <div class="col-md-8 col-sm-12 ">
-            <h1>Hello, world!</h1>
-            <p class="lead">
-              O meu primeiro super site no wordpress com bootstrap e nodejs
-            </p>
+        <div class="col-md-6 col-sm-12 ">
+ 
+            <?php 
+
+              $custom_logo_id = get_theme_mod('custom_logo') ; 
+              $logo = wp_get_attachment_image_src($custom_logo_id,'full'); 
+              
+              if( has_custom_logo(  )){
+                echo '<img src="'. esc_url( $logo[0] ) . '" class="img-fluid" >';
+              }
+              else{ ?>
+                <h1><?php get_bloginfo( 'name' ); ?></h1>
+                <p class="lead">    <?php get_bloginfo('description') ?>        </p>
+              <?php 
+              }
+              ?>
         </div>
-        <div class="col-md-4 col-sm-12">
-          <form action="">
-            <div class="input-group">
-              <input type="text" placeholder="o que procura" class="form-control">
-              <div class="input-group-append">
-                <button class="btn btn-my-color-5">Buscar</button>
-              </div>
-            </div>
-          </form>
+        <div class="col-md-4 offset-md-2 col-sm-12">
+           <?php 
+              dynamic_sidebar('Busca' );
+           ?>
         </div>
       </header><!-- ./header -->
 

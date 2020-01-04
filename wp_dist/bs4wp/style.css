@@ -4,3 +4,10 @@ Author: Lucas Martines
 Version: 1.0.0
 Description: Tema construido usando wordpress e bootstrap
 */
+
+.card-body .wp-block-image{
+	margin: 0;
+}
+.card-body > figure + p {
+	display: none;
+}

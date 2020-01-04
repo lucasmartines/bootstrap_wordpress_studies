@@ -1,21 +1,35 @@
 <?php
 
-//chamar a tag title
-function bs4wp_title_tag(){
+
+function bs4wp_theme_support(){
+	//chamar a tag title
 	add_theme_support('title-tag');
 
+
+	// chamar a logo
+	add_theme_support('custom-logo');
+
+
+
+	/**/
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image'
+	) );
+
 }
-add_action('after_setup_theme','bs4wp_title_tag');
+
+add_action('after_setup_theme','bs4wp_theme_support');
 
 
 
 /*previnir erro na tag title*/
 
-if(!function_exists('wp_render_title_tag')){
-	 
+if(!function_exists('wp_render_theme_support')){
+	  
 	function bs4wp_render_title(){
 		?>
-			<title> <?php  wp_title('|',true,'right') ?> </title>
+			<title> Titulo:  <?php  wp_title('|',true,'right') ?> </title>
 		<?php 
 	}
 	add_action('wp_head','bs4wp_render_title');
@@ -59,4 +73,18 @@ register_sidebar([
 	'after_title'   => '</h5></div><div class="card-body">' /*fechar o titulo e abrir o card-body*/
 ]);
 
-?>
+/*registrar e criar o buscador*/
+register_sidebar([
+	'name' => 'Busca',
+	'id' => 'busca',
+	'before_widget' => '<div class="blog-search">',/*antes de iniciar o widget crie o elemento div.card.mb-4*/
+	'after_widget'  => '</div>',/*depois feche o .card.mb-4+.card-body*/
+	'before_title'  => '<h5>',/*abrir o titulo*/
+	'after_title'   => '</h5>' /*fechar o titulo e abrir o card-body*/
+]);
+
+
+
+
+/*incluir funcões de personalização*/
+require get_template_directory() . '/inc/customize.php';

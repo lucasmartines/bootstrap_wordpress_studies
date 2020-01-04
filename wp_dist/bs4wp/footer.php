@@ -2,8 +2,8 @@
       <div class="container">
         <div class="row text-white">
           <div class="col py-5 text-center">
-            <h5>Mais um tema pro wordpress</h5>
-            <p class="mb-0">Tema feito a muitas custas e estresse por causa dos cachorros.</p>
+            <h5><?php echo get_theme_mod('footer_title','Meu Primeiro Tema de Wordpress') ?></h5>
+            <p class="mb-0"><?php echo get_theme_mod('footer_text','Feito por mim com muita dedicação e esforço') ?></p>
           </div>
         </div>
       </div>
